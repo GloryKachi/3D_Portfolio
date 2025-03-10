@@ -72,68 +72,66 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
+    title: "Chat Application",
+    des: "A real-time messaging app with a sleek interface, built for seamless communication and collaboration.",
+    img: "/quick-talk-img.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/adrianhajdin?tab=repositories",
+    link: "https://quick-talk-3mro.onrender.com/",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
+    title: "Ticket Booking Application",
+    des: "The easiest way to book intercity trips with any transport provider, access various modes of transport, plan and embark on your journeys, all from one platform.",
+    img: "/nomadicpod-image.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/zoom-clone",
+    link: "https://nomadicpod.com/",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
+    title: "AI Image SaaS - In Progress.....",
     des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://github.com/adrianhajdin/ai_saas_app",
+    // link: "https://github.com/adrianhajdin/ai_saas_app",
   },
   {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
+    title: "3D Website- In Progress.....",
     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://github.com/adrianhajdin/iphone",
+    // link: "https://github.com/adrianhajdin/iphone",
   },
 ];
 
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Glory is a dedicated and highly skilled developer. Her ability to break down complex concepts and mentor aspiring developers at Hackerspace has been invaluable. Her passion for technology and commitment to excellence make her a standout professional.",
+    name: "Spencer Nweke",
+    title: "Hackerspace Manager, GOMYCODE",
+    image: "/Spencer.svg",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Glory's problem-solving skills and attention to detail are exceptional. She played a key role in leading projects, mentoring junior developers, and ensuring high-quality software delivery. Her technical expertise and leadership make her an asset to any team.",
+    name: "Saheed Ajayi",
+    title: "Team Lead, Semicolon Africa",
+    image: "/Saheed.jpeg",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Working with Glory has been an absolute pleasure. She has a keen understanding of product development and always brings innovative ideas to the table. Her ability to collaborate across teams and deliver results makes her an invaluable contributor.",
+    name: "Emmanuel Onwubiko",
+    title: "Product Manager, Nomadipod",
+    image: "/Emmanuel.jpeg",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+      "Glory is an outstanding software engineer with deep technical expertise and a strong problem-solving mindset. Her ability to tackle complex challenges and deliver scalable solutions sets her apart. She is an exceptional engineer and a great team player.",
+    name: "Chibuzor Christian",
+    title: "Senior Software Engineer, Black Silicon",
+    image: "Chibuzor.jpeg",
   },
 ];
 
@@ -174,27 +172,27 @@ export const workExperience = [
   {
     id: 1,
     title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    desc: "Assisted in the development of a web-based platform using Vue.js, enhancing interactivity.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Frontend Engineer",
+    desc: "Designed and developed web application using React.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    title: "Software Engineer",
+    desc: "Built full-stack web applications using MERN stack. Designed RESTful APIs, implemented authentication, and optimized performance for scalable solutions.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
+    title: "Frontend Engineer",
     desc: "Developed and maintained user-facing features using modern frontend technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",

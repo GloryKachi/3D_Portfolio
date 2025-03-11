@@ -8,7 +8,7 @@ import countries from "@/data/globe.json";
 
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    threeGlobe: any; // Temporary workaround
+    threeGlobe: any;
   }
 }
 

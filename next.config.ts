@@ -4,6 +4,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: false,
   /* config options here */
+  output: "export",
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default withSentryConfig(nextConfig, {

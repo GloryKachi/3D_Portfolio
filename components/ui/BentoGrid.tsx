@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import dynamic from "next/dynamic";
 import { BackgroundGradientAnimation } from "./GradientBg";
@@ -74,7 +75,9 @@ export const BentoGridItem = ({
       <div className={`${id === 6 && "flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
-            <img
+            <Image
+              width={1000}
+              height={1000}
               src={img}
               alt={img}
               className={cn(imageClassName, "object-cover, object-center")}
@@ -87,7 +90,8 @@ export const BentoGridItem = ({
           }`}
         >
           {spareImg && (
-            <img
+            <Image
+              fill
               src={spareImg}
               alt={spareImg}
               className={"object-cover, object-center w-full h-full"}

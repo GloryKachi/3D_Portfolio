@@ -8,7 +8,7 @@ import countries from "@/data/globe.json";
 
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    threeGlobe: any;
+    threeGlobe: unknown;
   }
 }
 
@@ -26,6 +26,15 @@ type Position = {
   endLng: number;
   arcAlt: number;
   color: string;
+};
+type ArcData = {
+  startLat: number;
+  startLng: number;
+  endLat: number;
+  endLng: number;
+  arcAlt: number;
+  color: string;
+  order: number;
 };
 
 export type GlobeConfig = {
@@ -97,7 +106,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       _buildData();
       _buildMaterial();
     }
-  }, [globeRef.current]);
+  }, []);
 
   const _buildMaterial = () => {
     if (!globeRef.current) return;
@@ -116,7 +125,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
   const _buildData = () => {
     const arcs = data;
-    let points = [];
+    const points = [];
     for (let i = 0; i < arcs.length; i++) {
       const arc = arcs[i];
       const rgb = hexToRgb(arc.color) as { r: number; g: number; b: number };
@@ -158,7 +167,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
         .showAtmosphere(defaultProps.showAtmosphere)
         .atmosphereColor(defaultProps.atmosphereColor)
         .atmosphereAltitude(defaultProps.atmosphereAltitude)
-        .hexPolygonColor((e) => {
+        .hexPolygonColor(() => {
           return defaultProps.polygonColor;
         });
       startAnimation();
@@ -174,17 +183,22 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .arcStartLng((d) => (d as { startLng: number }).startLng * 1)
       .arcEndLat((d) => (d as { endLat: number }).endLat * 1)
       .arcEndLng((d) => (d as { endLng: number }).endLng * 1)
-      .arcColor((e: any) => (e as { color: string }).color)
+      // .arcColor((e: any) => (e as { color: string }).color)
+      // .arcColor((e: { [key: string]: any }) => e.color as string)
+      // @ts-expect-error: This line breaks due to type mismatch in library
+
+      .arcColor((e: ArcData) => e.color as string)
+
       .arcAltitude((e) => {
         return (e as { arcAlt: number }).arcAlt * 1;
       })
-      .arcStroke((e) => {
+      .arcStroke(() => {
         return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)];
       })
       .arcDashLength(defaultProps.arcLength)
       .arcDashInitialGap((e) => (e as { order: number }).order * 1)
       .arcDashGap(15)
-      .arcDashAnimateTime((e) => defaultProps.arcTime);
+      .arcDashAnimateTime(() => defaultProps.arcTime);
 
     globeRef.current
       .pointsData(data)
@@ -195,7 +209,11 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
     globeRef.current
       .ringsData([])
-      .ringColor((e: any) => (t: any) => e.color(t))
+      .ringColor(
+        (e: { color?: (t: string) => string }) => (t: number) =>
+          e.color ? e.color(t.toString()) : "gray"
+      )
+      // .ringColor((e: any) => (t: any) => e.color(t))
       .ringMaxRadius(defaultProps.maxRings)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
       .ringRepeatPeriod(
@@ -280,19 +298,20 @@ export function World(props: WorldProps) {
 }
 
 export function hexToRgb(hex: string) {
-  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  let shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
   hex = hex.replace(shorthandRegex, function (m, r, g, b) {
     return r + r + g + g + b + b;
   });
 
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? {
         r: parseInt(result[1], 16),
         g: parseInt(result[2], 16),
         b: parseInt(result[3], 16),
       }
-    : null;
+    : { r: 0, g: 0, b: 0 };
+  // : null;
 }
 
 export function genRandomNumbers(min: number, max: number, count: number) {

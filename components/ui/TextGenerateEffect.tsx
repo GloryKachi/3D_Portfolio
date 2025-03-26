@@ -15,15 +15,17 @@ export const TextGenerateEffect = ({
   duration?: number;
 }) => {
   const [scope, animate] = useAnimate();
-  let wordsArray = words.split(" ").reduce((acc: string[], word, idx, arr) => {
-    if (word === "User" && arr[idx + 1] === "Experiences") {
-      acc.push("User Experiences");
-      arr.splice(idx + 1, 1);
-    } else {
-      acc.push(word);
-    }
-    return acc;
-  }, []);
+  const wordsArray = words
+    .split(" ")
+    .reduce((acc: string[], word, idx, arr) => {
+      if (word === "User" && arr[idx + 1] === "Experiences") {
+        acc.push("User Experiences");
+        arr.splice(idx + 1, 1);
+      } else {
+        acc.push(word);
+      }
+      return acc;
+    }, []);
   useEffect(() => {
     animate(
       "span",

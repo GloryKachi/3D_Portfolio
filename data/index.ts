@@ -131,7 +131,7 @@ export const testimonials = [
       "Glory is an outstanding software engineer with deep technical expertise and a strong problem-solving mindset. Her ability to tackle complex challenges and deliver scalable solutions sets her apart. She is an exceptional engineer and a great team player.",
     name: "Chibuzor Christian",
     title: "Senior Software Engineer, Black Silicon",
-    image: "Chibuzor.jpeg",
+    image: "/Chibuzor.jpeg",
   },
 ];
 

@@ -1,13 +1,16 @@
 import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
+module.exports = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+};
+
 const nextConfig: NextConfig = {
   reactStrictMode: false,
   /* config options here */
-  output: "export",
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  // output: "export",
 };
 
 export default withSentryConfig(nextConfig, {

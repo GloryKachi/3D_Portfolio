@@ -96,11 +96,11 @@ export const projects = [
   },
   {
     id: 4,
-    title: "3D Website- In Progress.....",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
-    img: "/p4.svg",
+    title: "A Combination of my Deployed Projects",
+    des: "Responsive web application showcasing my projects, built with Next js and Tailwind CSS.",
+    img: "/my_project_combo.jpg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    // link: "https://github.com/adrianhajdin/iphone",
+    link: "https://gloryprojectcombo.vercel.app/",
   },
 ];
 
@@ -211,5 +211,6 @@ export const socialMedia = [
   {
     id: 3,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/glorykachiihueze/",
   },
 ];
